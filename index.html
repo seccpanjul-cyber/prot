@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matcha lalu</title>
+
+    <style>
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: white;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 40px;
+            background: green;
+            color: white;
+            position: sticky;
+            
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .hero {
+            height: 70vh;
+            background-color: rgb(9, 84, 9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            padding: 40px;
+        }
+
+        .product-card {
+            background: whitesmoke;
+            border: 2px solid #b7d7b7;
+            border-radius: 18px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 14px rgba(0, 50, 0, 0.1);
+            transition: 0.25s;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 60, 0, 0.15);
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .product-card p {
+            color: #3f6b3f;
+            font-weight: 600;
+            margin: 10px 0 5px;
+        }
+
+        .price-tag {
+            color: #2f5c2f;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 10px 18px;
+            background: #6e9f6e;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            background: #567d56;
+        }
+
+        .details-wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            padding: 40px;
+        }
+
+        .detail-box {
+            display: flex;
+            flex-direction: column;
+            background: #e3f2e3;
+            padding: 20px;
+            border-radius: 16px;
+            border: 2px solid #bad8ba;
+            box-shadow: 0 6px 20px rgba(0, 70, 0, 0.12);
+        }
+
+        .detail-images {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .detail-images img {
+            width: 50%;
+            border-radius: 10px;
+        }
+
+        .detail-text h2 {
+            color: #2f5c2f;
+            font-size: 26px;
+        }
+
+        .detail-text p {
+            color: #355f35;
+        }
+
+        .detail-price {
+            margin-top: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #2f5c2f;
+        }
+
+        .testimoni {
+            padding: 40px;
+            background: white;
+            text-align: center;
+        }
+
+        .testi-box {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .form-section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+            text-align: left;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+
+        button {
+            background: #6e9f6e;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #355d36;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .details-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .detail-images {
+                flex-direction: column;
+            }
+            .detail-images img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <div><b>Matcha Bliss</b></div>
+    <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#produk">Produk</a></li>
+        <li><a href="#testimoni">Testimoni</a></li>
+        <li><a href="#form">Kontak</a></li>
+    </ul>
+</nav>
+
+<section class="hero" id="hero">
+    <h1>Premium Matcha Jepang</h1>
+    <p>Rasakan kualitas matcha terbaik<br>dengan aroma wangi dan tekstur halus.</p>
+</section>
+
+<section id="produk">
+    <h2 style="text-align:center; color:green;">Kumpulan Produk</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="ron.jpg">
+            <p>Matcha Macaron</p>
+            <p class="price-tag">Rp 45.000</p>
+            <a href="#detail-premium" class="btn">Lihat Detail</a>
+        </div>
+
+        <div class="product-card">
+            <img src="matt.jpg">
+            <p>Matcha Latte</p>
+            <p class="price-tag">Rp 35.000</p>
+            <a href="#detail-latte" class="btn">Lihat Detail</a>
+        </div>
+
+        <div class="product-card">
+            <img src="cok.jpg">
+            <p>Matcha Cookies</p>
+            <p class="price-tag">Rp 29.000</p>
+            <a href="#detail-cookies" class="btn">Lihat Detail</a>
+        </div>
+
+        <div class="product-card">
+            <img src="crem.jpg">
+            <p>Cream Cheese Overdose Matcha Latte</p>
+            <p class="price-tag">Rp 22.000</p>
+            <a href="#detail-ice" class="btn">Lihat Detail</a>
+        </div>
+
+    </div>
+</section>
+
+<div class="details-wrapper">
+
+    <section id="detail-premium" class="detail-box">
+        <div class="detail-images">
+            <img src="ron.jpg">
+        </div>
+        <div class="detail-text">
+            <h2>Matcha Macaron</h2>
+            <p>Macaron manis dengan aroma matcha yang khas, tekstur lembut di luar dan creamy di dalam.</p>
+            <div class="detail-price">Rp 45.000</div>
+        </div>
+    </section>
+
+    <section id="detail-latte" class="detail-box">
+        <div class="detail-images">
+            <img src="matt.jpg">
+        </div>
+        <div class="detail-text">
+            <h2>Matcha Latte</h2>
+            <p>Campuran matcha creamy yang lembut, cocok sebagai minuman harian.</p>
+            <div class="detail-price">Rp 35.000</div>
+        </div>
+    </section>
+
+    <section id="detail-cookies" class="detail-box">
+        <div class="detail-images">
+            <img src="cok.jpg">
+        </div>
+        <div class="detail-text">
+            <h2>Matcha Cookies</h2>
+            <p>Kue renyah dengan aroma matcha yang kuat dan rasa manis seimbang.</p>
+            <div class="detail-price">Rp 29.000</div>
+        </div>
+    </section>
+
+    <section id="detail-ice" class="detail-box">
+        <div class="detail-images">
+            <img src="crem.jpg">
+        </div>
+        <div class="detail-text">
+            <h2>Cream Cheese Overdose Matcha Latte</h2>
+            <p>inuman matcha latte dengan topping cream cheese melimpah, rasa manis dan gurih berpadu sempurna.</p>
+            <div class="detail-price">Rp 29.000</div>
+        </div>
+    </section>
+
+</div>
+
+<section id="testimoni" class="testimoni">
+    <h2>Testimoni Pelanggan</h2>
+    <div class="testi-box">
+        <p>"Matchanya super enak dan halus! Pasti beli lagi!" — orng</p>
+    </div>
+</section>
+
+<section id="form" class="form-section">
+    <h2>kontak</h2>
+    <p>Masukkan email & nama jika anda ingin memesan sesuatu</p>
+
+    <form>
+        <label>Nama</label>
+        <input type="text" placeholder="Nama Anda">
+
+        <label>Email</label>
+        <input type="email" placeholder="Email Anda">
+
+        <button type="submit">Kirim</button>
+    </form>
+</section>
+
+<footer>
+    © 2025 Matcha Bliss - Semua Hak Dilindungi
+</footer>
+
+</body>
+</html>
